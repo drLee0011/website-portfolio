@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon Oliver | Cybersecurity Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hacker: {
+                            green: '#00ff00',
+                            dark: '#111827',
+                            light: '#1f2937',
+                        }
+                    },
+                    animation: {
+                        'text-gradient': 'text-gradient 1.5s linear infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 1s ease-out',
+                        'slide-right': 'slideRight 1s ease-out',
+                    },
+                    keyframes: {
+                        'text-gradient': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        'typing': {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        'blink-caret': {
+                            'from, to': { 'border-color': 'transparent' },
+                            '50%': { 'border-color': 'hacker-green' }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'fadeIn': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'slideUp': {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        'slideRight': {
+                            '0%': { transform: 'translateX(-100px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: #111827;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        
+        .hacker-text {
+            text-shadow: 0 0 5px #00ff00;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            10% { clip: rect(112px, 9999px, 76px, 0); }
+            20% { clip: rect(85px, 9999px, 77px, 0); }
+            30% { clip: rect(27px, 9999px, 97px, 0); }
+            40% { clip: rect(64px, 9999px, 98px, 0); }
+            50% { clip: rect(61px, 9999px, 85px, 0); }
+            60% { clip: rect(99px, 9999px, 114px, 0); }
+            70% { clip: rect(34px, 9999px, 115px, 0); }
+            80% { clip: rect(98px, 9999px, 129px, 0); }
+            90% { clip: rect(43px, 9999px, 96px, 0); }
+            100% { clip: rect(82px, 9999px, 64px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 119px, 0); }
+            10% { clip: rect(144px, 9999px, 41px, 0); }
+            20% { clip: rect(6px, 9999px, 5px, 0); }
+            30% { clip: rect(122px, 9999px, 156px, 0); }
+            40% { clip: rect(109px, 9999px, 133px, 0); }
+            50% { clip: rect(124px, 9999px, 43px, 0); }
+            60% { clip: rect(109px, 9999px, 182px, 0); }
+            70% { clip: rect(41px, 9999px, 84px, 0); }
+            80% { clip: rect(66px, 9999px, 43px, 0); }
+            90% { clip: rect(104px, 9999px, 37px, 0); }
+            100% { clip: rect(38px, 9999px, 14px, 0); }
+        }
+        
+        .terminal-line {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .terminal-line::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 8px #00ff00);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1f2937;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 255, 0, 0.1);
+            border-color: #00ff00;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #00ff00;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        .gradient-border {
+            position: relative;
+        }
+        
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 0.5rem;
+            background: linear-gradient(to right, #111827, #111827) padding-box,
+                        linear-gradient(to right, #00ff00, #00aaff) border-box;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        .input-field {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #00ff00;
+            box-shadow: 0 0 0 1px #00ff00;
+        }
+        
+        .btn-hacker {
+            background: linear-gradient(45deg, #00ff00, #00aaff);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hacker:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00ff00, transparent);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #00ff00;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .profile-img {
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            transform: translateY(50px);
+        }
+        
+        .slide-up.animated {
+            transform: translateY(0);
+        }
+        
+        .slide-right {
+            transform: translateX(-50px);
+        }
+        
+        .slide-right.animated {
+            transform: translateX(0);
+        }
+        
+        .slide-left {
+            transform: translateX(50px);
+        }
+        
+        .slide-left.animated {
+            transform: translateX(0);
+        }
+        
+        .fade-in {
+            opacity: 0;
+        }
+        
+        .fade-in.animated {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <canvas id="matrix" class="matrix-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-hacker-dark bg-opacity-90 backdrop-blur-sm z-50 border-b border-hacker-green border-opacity-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-hacker-green text-2xl font-bold hacker-text glitch" data-text="LEON_OLIVER">LEON_OLIVER</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link active-nav">Home</a>
+                        <a href="#about" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">About</a>
+                        <a href="#skills" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Skills</a>
+                        <a href="#projects" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Projects</a>
+                        <a href="#publications" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Publications</a>
+                        <a href="#education" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Education</a>
+                        <a href="#certifications" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Certifications</a>
+                        <a href="#achievements" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Achievements</a>
+                        <a href="#contact" class="text-white hover:text-hacker-green px-3 py-2 rounded-md text-sm font-medium nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-hacker-dark border-t border-hacker-green border-opacity-20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#publications" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Publications</a>
+                <a href="#education" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Education</a>
+                <a href="#certifications" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
+                <a href="#achievements" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Achievements</a>
+                <a href="#contact" class="text-white hover:text-hacker-green block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 hacker-text glitch" data-text="LEON OLIVER">
+                    <span class="typewriter">LEON OLIVER</span>
+                </h1>
+                <div class="terminal-line text-xl md:text-2xl text-hacker-green mb-8">
+                    <span class="text-white">$ </span>
+                    <span class="typewriter">Certified Ethical Hacker | Security Researcher | AI Security Specialist</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    I'm a passionate cybersecurity professional with extensive knowledge about network security and system operations. 
+                    With expertise in AI-powered security solutions and hands-on experience with various security tools, I work with 
+                    dedication and bring strong teamwork and leadership skills.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="btn-hacker text-black font-bold py-3 px-6 rounded-md">
+                        Contact Me
+                    </a>
+                    <a href="#about" class="border border-hacker-green text-hacker-green hover:bg-hacker-green hover:text-black font-bold py-3 px-6 rounded-md transition duration-300">
+                        About Me
+                    </a>
+                </div>
+            </div>
+            <div class="mt-20 text-center scroll-indicator">
+                <a href="#about" class="text-hacker-green animate-bounce inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-hacker-light bg-opacity-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+                <span class="hacker-text">About Me</span>
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3 flex justify-center slide-right animate-on-scroll">
+                    <div class="relative">
+                        <img src="images/imagelee.jpg" alt="Leon Oliver" class="profile-img w-64 h-64 rounded-full object-cover float">
+                        <div class="absolute -bottom-3 -right-3 bg-hacker-green text-black font-bold px-4 py-1 rounded-full">
+                            <i class="fas fa-shield-alt mr-2"></i> SECURE
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 slide-left animate-on-scroll">
+                    <div class="gradient-border bg-hacker-dark p-8 rounded-lg">
+                        <p class="text-gray-300 mb-6 text-lg">
+                            I'm <span class="text-hacker-green font-bold">Leon Oliver</span>, a <span class="text-hacker-green">Certified Ethical Hacker (CEH v12)</span> and <span class="text-hacker-green">Certified Network Security Practitioner (CNSP)</span> with a <span class="text-hacker-green">Master's in Cyber Security</span> from Dublin Business School and a BE in Computer Science specializing in IoT and cybersecurity.
+                        </p>
+                        
+                        <p class="text-gray-300 mb-6 text-lg">
+                            My passion lies in crafting innovative defenses—from building tools like <span class="text-hacker-green">NetSpy (Python-based network scanner)</span> and <span class="text-hacker-green">Phisnet (anti-phishing browser extension)</span> to leveraging AI for threat detection.
+                        </p>
+                        
+                        <p class="text-gray-300 mb-6 text-lg">
+                            Driven by ethical hacking challenges and IoT security, I thrive on transforming vulnerabilities into fortified systems. Let's connect and secure the digital frontier!
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 mt-8">
+                            <a href="https://www.linkedin.com/in/leon-o-888a49128/" target="_blank" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">
+                                <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/drLee0011" target="_blank" class="flex items-center bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-md transition">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="#contact" class="flex items-center bg-hacker-green hover:bg-green-600 text-black px-4 py-2 rounded-md transition">
+                                <i class="fas fa-envelope mr-2"></i> Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+                <span class="hacker-text">Technical Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll">
+                    <img src="https://www.kali.org/images/kali-logo.svg" alt="Kali Linux" class="h-12 w-12 mb-2">
+                    <span class="text-white text-sm text-center">Kali Linux Tools</span>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.1s;">
+                    <i class="fas fa-bug text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">Hack-the-Box</span>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.2s;">
+                    <i class="fab fa-java text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">JAVA</span>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.3s;">
+                    <i class="fab fa-python text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">Python</span>
+                </div>
+                
+                <!-- Skill 5 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.4s;">
+                    <i class="fab fa-aws text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">AWS</span>
+                </div>
+                
+                <!-- Skill 6 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.5s;">
+                    <i class="fab fa-microsoft text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">Azure</span>
+                </div>
+                
+                <!-- Skill 7 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.6s;">
+                    <i class="fab fa-git-alt text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">Git & GitHub</span>
+                </div>
+                
+                <!-- Skill 8 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.7s;">
+                    <i class="fas fa-code text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">Embedded C</span>
+                </div>
+                
+                <!-- Skill 9 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.8s;">
+                    <i class="fab fa-html5 text-hacker-green text-4xl mb-2"></i>
+                    <span class="text-white text-sm text-center">HTML & CSS</span>
+                </div>
+                
+                <!-- Skill 10 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.9s;">
+                    <img src="https://nmap.org/images/sitelogo.png" alt="Nmap" class="h-12 w-12 mb-2">
+                    <span class="text-white text-sm text-center">Nmap</span>
+                </div>
+                
+                <!-- Skill 11 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 1.0s;">
+                    <img src="https://jacobriggs.io/tools/app/web/upload/large/3_eedab2dbcde47a63f847af0a612d1f8d.png" alt="Burp Suite" class="h-12 w-12 mb-2">
+                    <span class="text-white text-sm text-center">Burp Suite</span>
+                </div>
+                
+                <!-- Skill 12 -->
+                <div class="skill-icon flex flex-col items-center p-4 bg-hacker-dark rounded-lg fade-in animate-on-scroll" style="animation-delay: 1.1s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wireshark_icon.svg/150px-Wireshark_icon.svg.png" alt="Wireshark" class="h-12 w-12 mb-2">
+                    <span class="text-white text-sm text-center">Wireshark</span>
+                </div>
+            </div>
+            
+            <div class="mt-12 slide-up animate-on-scroll">
+                <h3 class="text-xl font-bold text-white mb-6 text-center section-title">
+                    <span class="hacker-text">Area of Interest</span>
+                </h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Cyber Security</span>
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Embedded Developing</span>
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Software Development</span>
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Bug Bounty</span>
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Network Security</span>
+                    <span class="bg-hacker-green bg-opacity-20 text-hacker-green px-4 py-2 rounded-full">Digital Forensics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-hacker-light bg-opacity-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+                <span class="hacker-text">My Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-hacker-dark p-6 rounded-lg slide-up animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-shield-alt text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">NetSpy</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Developed a terminal-based cybersecurity tool for internal network reconnaissance and vulnerability scanning.
+                    </p>
+                    <ul class="text-gray-400 text-sm mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Features include OS fingerprinting, port scanning
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Device discovery and known vulnerability detection
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Built using Python, Nmap, Scapy
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Nmap</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Scapy</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Linux</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-hacker-dark p-6 rounded-lg slide-up animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-robot text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">AI Security Scanner</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Scans local and external drives and quarantines malware using high-efficiency datasets.
+                    </p>
+                    <ul class="text-gray-400 text-sm mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Performs real-time website security checks
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Uses XGBoost model for detection
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            High accuracy malware detection
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">AI</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">XGBoost</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Security</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-hacker-dark p-6 rounded-lg slide-up animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-globe text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Phisnet</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Chrome/Firefox extension detecting phishing sites using heuristic rules and threat APIs.
+                    </p>
+                    <ul class="text-gray-400 text-sm mb-4 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Real-time alerts for malicious domains
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Lightweight and efficient
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-hacker-green mr-2"></i>
+                            Supports multiple threat intelligence sources
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Browser Ext</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Security</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">API</span>
+                    </div>
+                </div>
+                
+                <!-- Smart Projects -->
+                <div class="project-card bg-hacker-dark p-6 rounded-lg md:col-span-2 lg:col-span-3 slide-up animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Smart IoT Projects</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-hacker-green mb-2">Smart Agriculture System</h4>
+                            <p class="text-gray-300 mb-2">
+                                Irrigation system using ESP 3288 with automated watering based on soil moisture.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">IoT</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">ESP3288</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Automation</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-hacker-green mb-2">Smart Car Parking</h4>
+                            <p class="text-gray-300 mb-2">
+                                Parking slot allocation system with real-time monitoring and guidance.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">IoT</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Sensors</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Real-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-hacker-green mb-2">Smart Blind Stick</h4>
+                            <p class="text-gray-300 mb-2">
+                                Assistive device for visually impaired with obstacle detection and navigation.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Assistive Tech</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Ultrasonic</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Accessibility</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-hacker-green mb-2">Home Automation</h4>
+                            <p class="text-gray-300 mb-2">
+                                Automated home control system using Arduino Nano R3 with remote access.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Arduino</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Home IoT</span>
+                                <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+                <span class="hacker-text">Publications</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Publication 1 -->
+                <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-right animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">IOT-based Health Monitor</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Journal published based on IOT-based heart rate and blood oxygen monitor with automatic data saving.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fas fa-calendar-alt mr-2 text-hacker-green"></i>
+                        <span>Published: 2023</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400 mt-2">
+                        <i class="fas fa-database mr-2 text-hacker-green"></i>
+                        <span>Scopus Indexed</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">IoT</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Healthcare</span>
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Wearables</span>
+                    </div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-left animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-hacker-green text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">AI Smart Mining Helmet</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Journal published based on AI based Smart mining helmet with real-time hazard detection and worker safety monitoring.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fas fa-calendar-alt mr-2 text-hacker-green"></i>
+                        <span>Published: 2024</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400 mt-2">
+                        <i class="fas fa-database mr-2 text-hacker-green"></i>
+                        <span>YMER Journal</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">AI</span>
+        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Industrial IoT</span>
+        <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">Safety</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="py-20 px-4 sm:px-6 lg:px-8 bg-hacker-light bg-opacity-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+      <span class="hacker-text">Education</span>
+    </h2>
+    
+    <div class="space-y-8">
+      <!-- Education 1 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-up animate-on-scroll">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-white">Master's in Cyber Security</h3>
+            <p class="text-hacker-green">Dublin Business School</p>
+          </div>
+          <div class="mt-2 md:mt-0">
+            <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">2024-2025</span>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="text-lg font-semibold text-hacker-green mb-2">Key Learnings:</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Pentest & Digital Forensics</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Communication & Network Security</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Cloud Security (AWS & Azure)</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Application & Organizational Security</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Database & Network Admin</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Kali tools (Wireshark, Burp suite, Nmap, etc.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Education 2 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-up animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-white">BE - CSE (IoT & Cyber security)</h3>
+            <p class="text-hacker-green">SNS College of Engineering - Coimbatore</p>
+          </div>
+          <div class="mt-2 md:mt-0">
+            <span class="bg-hacker-green bg-opacity-20 text-hacker-green text-xs px-3 py-1 rounded-full">2020-2024</span>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h4 class="text-lg font-semibold text-hacker-green mb-2">Key Learnings:</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Cyber Forensics & Cryptography</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Ethical Hacking & Cyber Law</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Networking & IoT Architecture</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-hacker-green mr-2 text-sm"></i>
+              <span class="text-gray-300 text-sm">Mobile Computing & Blockchain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+      <span class="hacker-text">Certifications</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Certification 1 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Certified Ethical Hacker V12</h3>
+        </div>
+        <p class="text-gray-300 text-sm">EC-Council</p>
+      </div>
+      
+      <!-- Certification 2 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.1s;">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Certified Network Security Practitioner</h3>
+        </div>
+        <p class="text-gray-300 text-sm">The SecOps Group</p>
+      </div>
+      
+      <!-- Certification 3 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">CISCO Cyber Security Essentials</h3>
+        </div>
+        <p class="text-gray-300 text-sm">CISCO</p>
+      </div>
+      
+      <!-- Certification 4 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.3s;">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Career Essentials in Generative AI</h3>
+        </div>
+        <p class="text-gray-300 text-sm">LinkedIn Learning</p>
+      </div>
+      
+      <!-- Certification 5 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.4s;">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Android Bug Bounty Hunting</h3>
+        </div>
+        <p class="text-gray-300 text-sm">EC-Council</p>
+      </div>
+      
+      <!-- Certification 6 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg fade-in animate-on-scroll" style="animation-delay: 0.5s;">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-certificate text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Dark Web & Cryptocurrency</h3>
+        </div>
+        <p class="text-gray-300 text-sm">EC-Council</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section id="achievements" class="py-20 px-4 sm:px-6 lg:px-8 bg-hacker-light bg-opacity-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+      <span class="hacker-text">Achievements</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Achievement 1 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-right animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-trophy text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">State Level Robotics Programming</h3>
+        </div>
+        <p class="text-gray-300 mb-2">
+          Won Bronze medal at state level robotics programming competition conducted by Androbot.
+        </p>
+        <div class="flex items-center text-sm text-gray-400">
+          <i class="fas fa-calendar-alt mr-2 text-hacker-green"></i>
+          <span>2016</span>
+        </div>
+      </div>
+      
+      <!-- Achievement 2 -->
+      <div class="gradient-border bg-hacker-dark p-6 rounded-lg slide-left animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+            <i class="fas fa-passport text-hacker-green text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Right to Work Status</h3>
+        </div>
+        <p class="text-gray-300 mb-2">
+          Stamp 2 - Can work for 20 hours as an intern up to Oct 2025. Status will change to Stamp 1G for next two years thereafter.
+        </p>
+        <div class="flex items-center text-sm text-gray-400">
+          <i class="fas fa-map-marker-alt mr-2 text-hacker-green"></i>
+          <span>Dublin, Ireland</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center section-title">
+      <span class="hacker-text">Contact Me</span>
+    </h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div>
+        <div class="gradient-border bg-hacker-dark p-8 rounded-lg h-full slide-right animate-on-scroll">
+          <h3 class="text-xl font-bold text-white mb-6">Get In Touch</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-hacker-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Email</h4>
+                <a href="mailto:leonsmarter@gmail.com" class="text-gray-300 hover:text-hacker-green">leonsmarter@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-phone-alt text-hacker-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Phone</h4>
+                <a href="tel:+353874786973" class="text-gray-300 hover:text-hacker-green">+353 874786973</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-hacker-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Location</h4>
+                <p class="text-gray-300">Dublin, Ireland</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fab fa-linkedin text-hacker-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/leon-o-888a49128/" target="_blank" class="text-gray-300 hover:text-hacker-green">linkedin.com/in/leon-o-888a49128</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-hacker-green bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fab fa-github text-hacker-green text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">GitHub</h4>
+                <a href="https://github.com/drLee0011" target="_blank" class="text-gray-300 hover:text-hacker-green">github.com/drLee0011</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="gradient-border bg-hacker-dark p-8 rounded-lg slide-left animate-on-scroll">
+          <h3 class="text-xl font-bold text-white mb-6">Send Me a Message</h3>
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+              <input type="text" id="name" name="name" class="w-full input-field text-white rounded-md px-4 py-2" required>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+              <input type="email" id="email" name="email" class="w-full input-field text-white rounded-md px-4 py-2" required>
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+              <input type="text" id="subject" name="subject" class="w-full input-field text-white rounded-md px-4 py-2" required>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="5" class="w-full input-field text-white rounded-md px-4 py-2" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-hacker text-black font-bold py-3 px-6 rounded-md w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-hacker-dark py-8 px-4 sm:px-6 lg:px-8 border-t border-hacker-green border-opacity-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <span class="text-hacker-green text-xl font-bold hacker-text">LEON OLIVER</span>
+        <p class="text-gray-400 text-sm mt-1">Cybersecurity Professional | Ethical Hacker</p>
+      </div>
+      
+      <div class="flex space-x-6">
+        <a href="https://www.linkedin.com/in/leon-o-888a49128/" target="_blank" class="text-gray-400 hover:text-hacker-green">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://github.com/drLee0011" target="_blank" class="text-gray-400 hover:text-hacker-green">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="mailto:leonsmarter@gmail.com" class="text-gray-400 hover:text-hacker-green">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+      <p>&copy; 2024 Leon Oliver. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      document.getElementById('mobile-menu').classList.add('hidden');
+    });
+  });
+
+  // Contact form submission
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    const mailtoLink = `mailto:leonsmarter@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    window.location.href = mailtoLink;
+    
+    // Reset form
+    this.reset();
+    
+    // Show success message
+    alert('Your message has been prepared in your email client. Please send it to contact me. Thank you!');
+  });
+
+  // Matrix background effect
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+  const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const nums = '0123456789';
+  const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+
+  const alphabet = katakana + latin + nums + symbols;
+
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+
+  const rainDrops = [];
+
+  for (let x = 0; x < columns; x++) {
+    rainDrops[x] = 1;
+  }
+
+  const draw = () => {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#00ff00';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < rainDrops.length; i++) {
+      const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+      
+      if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        rainDrops[i] = 0;
+      }
+      rainDrops[i]++;
+    }
+  };
+
+  setInterval(draw, 30);
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  // Active nav link highlighting
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', function() {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
+      if (pageYOffset >= (sectionTop - 300)) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active-nav');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active-nav');
+      }
+    });
+  });
+
+  // Scroll animation
+  const animateOnScroll = function() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementPosition < windowHeight - 100) {
+        element.classList.add('animated');
+        
+        if (element.classList.contains('slide-up')) {
+          element.classList.add('slide-up');
+        }
+        if (element.classList.contains('slide-right')) {
+          element.classList.add('slide-right');
+        }
+        if (element.classList.contains('slide-left')) {
+          element.classList.add('slide-left');
+        }
+        if (element.classList.contains('fade-in')) {
+          element.classList.add('fade-in');
+        }
+      }
+    });
+  };
+
+  // Run once on page load
+  animateOnScroll();
+  
+  // Run on scroll
+  window.addEventListener('scroll', animateOnScroll);
+</script>
+</body>
+</html>
